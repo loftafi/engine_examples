@@ -1,0 +1,19 @@
+.{
+    .name = .numbers,
+    .version = "0.0.0",
+    .fingerprint = 0x779ecaf9e46adf5d,
+    .minimum_zig_version = "0.16.0",
+
+    .dependencies = .{
+        .engine = .{
+            .url = "git+https://github.com/loftafi/engine.git#a438bb9ba3f9169bd993e48c4dc1f0ad2aaa2dfa",
+            .hash = "engine-0.26.4-1VilCtCb2gVDni962r3mHE9TSo-ixxwvQINUyUbMWFVP",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
