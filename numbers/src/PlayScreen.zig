@@ -68,9 +68,9 @@ pub fn init(
         .name = "play.screen",
         .layout = .{ .x = .grows, .y = .grows },
         .child_align = .{ .x = .centre, .y = .centre },
-        .pad = .{ .left = App.APP_PAD, .right = App.APP_PAD },
-        .maximum = .{ .width = BOARD_SIZE + (App.APP_PAD * 2) },
-        .minimum = .{ .width = BOARD_SIZE + (App.APP_PAD * 2), .height = App.APP_MINIMUM_HEIGHT },
+        .pad = .{ .left = 10, .right = 10 },
+        .maximum = .{ .width = BOARD_SIZE + (20) },
+        .minimum = .{ .width = BOARD_SIZE + (20), .height = 600 },
         .type = .{ .panel = .{ .direction = .top_to_bottom } },
         .visible = .hidden,
     });

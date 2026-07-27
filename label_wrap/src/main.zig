@@ -17,16 +17,15 @@ pub fn startup(init: *const std.process.Init) error{ OutOfMemory, AppInitFailed 
         .app_bundle_output = "resources.bd",
         .full_screen = false,
         .bundles = &.{
-            //.{ .filename = "resources.bd" },
             .{ .folder = "resources/" },
+            //.{ .filename = "resources.bd" },
         },
         .width = 600,
         .height = 1000,
         .min_width = 375,
         .min_height = 812,
-        .command = .default,
-        .translation_filename = "translations",
-        .desktop_icon = if (builtin.os.tag == .macos) "desktop icon" else null,
+        //.translation_filename = "translations",
+        //.desktop_icon = if (builtin.os.tag == .macos) "desktop icon" else null,
     };
 
     app.init(init.gpa, init.io, &config) catch |f| {

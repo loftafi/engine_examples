@@ -26,9 +26,9 @@ pub fn init(
         .name = "menu.screen",
         .layout = .{ .x = .grows, .y = .grows },
         .child_align = .{ .x = .centre, .y = .centre },
-        .pad = .{ .left = App.APP_PAD, .right = App.APP_PAD },
-        .minimum = .{ .width = App.APP_MINIMUM_WIDTH, .height = App.APP_MINIMUM_HEIGHT },
-        .maximum = .{ .width = App.APP_MAXIMUM_WIDTH },
+        .pad = .{ .left = 10, .right = 10 },
+        .minimum = .{ .width = 100, .height = 100 },
+        .maximum = .{ .width = 100 },
         .type = .{ .panel = .{
             .direction = .top_to_bottom,
         } },
@@ -59,7 +59,7 @@ pub fn init(
         .layout = .{ .x = .grows, .y = .shrinks },
         .child_align = .{ .x = .centre, .y = .centre },
         .minimum = .{ .height = 100 },
-        .pad = .{ .left = App.APP_PAD, .right = App.APP_PAD },
+        .pad = .{ .left = 10, .right = 10 },
         .type = .{ .panel = .{ .direction = .left_to_right } },
     }, display);
 
