@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181" height="165" viewBox="0 0 181 165" xmlns="http://www.w3.org/2000/svg">
+    <g id="Group">
+        <path id="Rectangle" fill="#93b659" fill-rule="evenodd" stroke="#93b659" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 155 L 171 155 L 171 135 L 8 135 Z"/>
+        <path id="path1" fill="#a6cf63" fill-rule="evenodd" stroke="#a6cf63" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 131 L 171 131 L 171 8 L 8 8 Z"/>
+        <path id="path2" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 16 4 L 163 4 L 163 0 L 16 0 Z"/>
+        <path id="Rectangle-copy-6" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 0 147 L 4 147 L 4 16 L 0 16 Z"/>
+        <path id="Rectangle-copy-7" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 175 147 L 179 147 L 179 16 L 175 16 Z"/>
+        <path id="Rectangle-copy-3" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 12 L 12 12 L 12 8 L 8 8 Z"/>
+        <path id="Rectangle-copy-4" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 167 12 L 171 12 L 171 8 L 167 8 Z"/>
+        <g id="g1">
+            <path id="Rectangle-copy" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 16 163 L 163 163 L 163 159 L 16 159 Z"/>
+            <path id="Rectangle-copy-2" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 155 L 12 155 L 12 151 L 8 151 Z"/>
+            <path id="Rectangle-copy-5" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 167 155 L 171 155 L 171 151 L 167 151 Z"/>
+        </g>
+        <g id="Group-copy" opacity="0.45">
+            <path id="path3" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 16 139 L 163 139 L 163 135 L 16 135 Z"/>
+            <path id="path4" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 131 L 12 131 L 12 127 L 8 127 Z"/>
+            <path id="path5" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 167 131 L 171 131 L 171 127 L 167 127 Z"/>
+        </g>
+        <g id="Group-copy-2" opacity="0.38">
+            <path id="path6" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 16 8 L 163 8 L 163 12 L 16 12 Z"/>
+            <path id="path7" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 8 16 L 12 16 L 12 20 L 8 20 Z"/>
+            <path id="path8" fill="#fffc67" fill-rule="evenodd" stroke="#fffc67" stroke-width="3.976846" stroke-linecap="round" stroke-linejoin="round" d="M 167 16 L 171 16 L 171 20 L 167 20 Z"/>
+        </g>
+    </g>
+</svg>
