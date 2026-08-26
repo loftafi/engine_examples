@@ -9,31 +9,25 @@ pub fn init(
     gpa: Allocator,
     io: std.Io,
     config: *engine.Config,
-) (engine.Error || Allocator.Error || error{
-    ThreadCreationFailed,
-    Utf8ExpectedContinuation,
-    Utf8OverlongEncoding,
-    Utf8EncodesSurrogateHalf,
-    Utf8CodepointTooLarge,
-    Utf8InvalidStartByte,
-    FailedReadingTimezone,
-} || Resources.Error || std.Io.File.OpenError || std.Io.File.StatError)!void {
+) (engine.Error || Allocator.Error || Resources.Error || std.Io.File.OpenError || std.Io.File.StatError)!void {
     self.* = .{
         .gpa = gpa,
         .io = io,
         .display = try Display.create(gpa, io, config.*),
     };
 
-    // Load fonts after screen initialisation so that the
-    // screen pixel density can be accounted for.
+    // Load fonts before panels to ensure layout accounts for font metrics.
     try self.display.setDefaultFont("ComicNeue", .unknown, .{});
     try self.display.setDefaultFont("GFSNeohellenic", .greek, .{});
 
+    // Background panel, not choosable.
     _ = try self.display.appendPanel(
         \\panel align start centre layout grows grows not_choosable {
         \\  rectangle layout grows grows
         \\}
     , App, self);
+
+    // Foreground panel with some wrappable text.
     _ = try self.display.appendPanel(
         \\panel align start centre layout grows grows vertical spacing=20 choosable {
         \\  label text "left a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g haw"
