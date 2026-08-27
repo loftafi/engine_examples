@@ -1,0 +1,7 @@
+i:DFB750
+d:202602170137
+v:true
+c:opensil
+s:GFSNeohellenic
+s:GFSNeohellenic-Regular
+s:GFSNeohellenic-Regular.ttf

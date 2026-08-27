@@ -1,0 +1,7 @@
+i:f9B4D1
+d:202602170137
+v:true
+c:opensil
+s:ComicNeue
+s:ComicNeue-Regular
+s:ComicNeue-Regular.ttf
