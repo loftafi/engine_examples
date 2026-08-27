@@ -8,6 +8,7 @@ ton: *Entity = undefined,
 toff: *Entity = undefined,
 tcorrect: *Entity = undefined,
 tincorrect: *Entity = undefined,
+tdisabled: *Entity = undefined,
 
 pub fn init(
     self: *App,
@@ -48,21 +49,26 @@ pub fn init(
         \\
         \\    panel horizontal spacing 1em layout grows shrinks
         \\    {
-        \\      button:toff text "off" layout shrinks shrinks 
+        \\      button:toff text "off" layout shrinks shrinks
         \\        button_default "white rounded rect" image_corner_radius 14 corner_radius 1em
         \\        pad left=0.5em right=0.5em top=0.5em bottom=0.5em
         \\
-        \\      button:ton text "on" layout shrinks shrinks 
+        \\      button:ton text "on" layout shrinks shrinks
         \\        image_corner_radius 14 corner_radius 1em
         \\        button_default "white rounded rect" image_corner_radius 14 corner_radius 1em
         \\        pad left=0.5em right=0.5em top=0.5em bottom=0.5em
         \\
-        \\      button:tincorrect text "incorrect" layout shrinks shrinks 
+        \\      button:tincorrect text "incorrect" layout shrinks shrinks
         \\        image_corner_radius 14 corner_radius 1em
         \\        button_default "white rounded rect" image_corner_radius 14 corner_radius 1em
         \\        pad left=0.5em right=0.5em top=0.5em bottom=0.5em
         \\
-        \\      button:tcorrect text "correct" layout shrinks shrinks 
+        \\      button:tcorrect text "correct" layout shrinks shrinks
+        \\        image_corner_radius 14 corner_radius 1em
+        \\        button_default "white rounded rect" image_corner_radius 14 corner_radius 1em
+        \\        pad left=0.5em right=0.5em top=0.5em bottom=0.5em
+        \\
+        \\      button:tdisabled text "disabled" layout shrinks shrinks
         \\        image_corner_radius 14 corner_radius 1em
         \\        button_default "white rounded rect" image_corner_radius 14 corner_radius 1em
         \\        pad left=0.5em right=0.5em top=0.5em bottom=0.5em
@@ -76,6 +82,7 @@ pub fn init(
     self.toff.type.button.toggle = .off;
     self.tcorrect.type.button.toggle = .correct;
     self.tincorrect.type.button.toggle = .incorrect;
+    self.tdisabled.type.button.toggle = .disabled;
 }
 
 pub fn deinit(self: *App) void {
