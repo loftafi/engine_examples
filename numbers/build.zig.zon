@@ -6,8 +6,8 @@
 
     .dependencies = .{
         .engine = .{
-            .url = "git+https://github.com/loftafi/engine.git#a438bb9ba3f9169bd993e48c4dc1f0ad2aaa2dfa",
-            .hash = "engine-0.26.4-1VilCtCb2gVDni962r3mHE9TSo-ixxwvQINUyUbMWFVP",
+            .url = "git+https://github.com/loftafi/engine#673f14049478e39c7f41b8b7e11915de473e0ec3",
+            .hash = "engine-0.35.4-1VilCgnXIQW-fHmc__KMZCZf6n8iYKfaMS83XS0SK4Tv",
         },
     },
 
