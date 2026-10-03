@@ -1,13 +1,19 @@
-var allocator: Allocator = undefined;
-var io: std.Io = undefined;
-var app: App = undefined;
+pub var app: App = undefined;
 
 /// Main app function for desktop versions of the app.
 pub fn main(init: std.process.Init) !void {
-    engine.start(&init, &startup, &shutdown);
+    try engine.start.start(&startup, &shutdown, init.minimal.args);
 }
 
-pub fn startup(init: *const std.process.Init) error{ OutOfMemory, AppInitFailed }!*engine.Display {
+pub fn startup(
+    gpa: Allocator,
+    arena: Allocator,
+    io: std.Io,
+    args: []const [*:0]const u8, //args: std.process.Args,
+) error{ OutOfMemory, AppInitFailed }!*engine.Display {
+    _ = arena;
+    _ = args;
+
     var config: engine.Config = .{
         .app_name = "Numbers Game",
         .app_version = "1.0",
@@ -29,7 +35,7 @@ pub fn startup(init: *const std.process.Init) error{ OutOfMemory, AppInitFailed 
         .desktop_icon = if (builtin.os.tag == .macos) "desktop icon" else null,
     };
 
-    app.init(init.gpa, init.io, &config) catch |f| {
+    app.init(gpa, io, &config) catch |f| {
         std.log.err("App.create() failed: {t}", .{f});
         return error.AppInitFailed;
     };
@@ -42,7 +48,11 @@ pub fn startup(init: *const std.process.Init) error{ OutOfMemory, AppInitFailed 
     return app.display;
 }
 
-pub fn shutdown(_: *const std.process.Init) void {
+pub fn shutdown(
+    _: Allocator,
+    _: Allocator,
+    _: std.Io,
+) void {
     app.deinit();
 }
 
@@ -58,3 +68,17 @@ const DebugAllocator = std.heap.DebugAllocator;
 const builtin = @import("builtin");
 const App = @import("App.zig");
 const engine = @import("engine");
+
+pub export const SDL_AppQuit = engine.AppQuitC;
+pub export const SDL_AppEvent = engine.AppEventC;
+pub export const SDL_AppIterate = engine.AppIterateC;
+
+pub export fn SDL_AppInit(
+    appstate: [*c]?*anyopaque,
+    argc: c_int,
+    argv: [*c][*c]u8, // [*:null]?[*:0]u8
+) callconv(.c) engine.sdl.SDL_AppResult {
+    engine.start.startup_handler = startup;
+    engine.start.shutdown_handler = shutdown;
+    return engine.AppInitC(appstate, argc, argv);
+}
