@@ -1,13 +1,13 @@
 .{
     .name = .themes,
-    .version = "0.0.0",
+    .version = "0.0.1",
     .fingerprint = 0x154232de620c9a9a,
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
 
     .dependencies = .{
         .engine = .{
-            .url = "git+https://github.com/loftafi/engine#673f14049478e39c7f41b8b7e11915de473e0ec3",
-            .hash = "engine-0.35.4-1VilCgnXIQW-fHmc__KMZCZf6n8iYKfaMS83XS0SK4Tv",
+            .url = "git+https://github.com/loftafi/engine#7311b4406a266643ca051d82a7c86953e5918291",
+            .hash = "engine-0.53.1-1VilCgpmRQgWoEbxttB_R8WqJkHtDd2htus6rqDUbbkK",
         },
     },
 

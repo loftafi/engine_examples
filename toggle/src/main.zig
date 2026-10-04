@@ -9,7 +9,7 @@ pub fn startup(
     gpa: Allocator,
     arena: Allocator,
     io: std.Io,
-    args: []const [*:0]const u8, //args: std.process.Args,
+    args: []const [*:0]const u8,
 ) error{ OutOfMemory, AppInitFailed }!*engine.Display {
     _ = arena;
     _ = args;
