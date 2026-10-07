@@ -5,6 +5,20 @@ pub fn main(init: std.process.Init) !void {
     try engine.start.start(&startup, &shutdown, init.minimal.args);
 }
 
+/// Entrypoint for callback version of the app.
+pub export fn SDL_AppInit(
+    appstate: [*c]?*anyopaque,
+    argc: c_int,
+    argv: [*c][*c]u8, // [*:null]?[*:0]u8
+) callconv(.c) engine.sdl.SDL_AppResult {
+    engine.start.startup_handler = startup;
+    engine.start.shutdown_handler = shutdown;
+    return engine.AppInitC(appstate, argc, argv);
+}
+pub export const SDL_AppQuit = engine.AppQuitC;
+pub export const SDL_AppEvent = engine.AppEventC;
+pub export const SDL_AppIterate = engine.AppIterateC;
+
 pub fn startup(
     gpa: Allocator,
     arena: Allocator,
@@ -66,17 +80,3 @@ const DebugAllocator = std.heap.DebugAllocator;
 const builtin = @import("builtin");
 const App = @import("App.zig");
 const engine = @import("engine");
-
-pub export const SDL_AppQuit = engine.AppQuitC;
-pub export const SDL_AppEvent = engine.AppEventC;
-pub export const SDL_AppIterate = engine.AppIterateC;
-
-pub export fn SDL_AppInit(
-    appstate: [*c]?*anyopaque,
-    argc: c_int,
-    argv: [*c][*c]u8, // [*:null]?[*:0]u8
-) callconv(.c) engine.sdl.SDL_AppResult {
-    engine.start.startup_handler = startup;
-    engine.start.shutdown_handler = shutdown;
-    return engine.AppInitC(appstate, argc, argv);
-}
